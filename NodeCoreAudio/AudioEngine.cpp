@@ -473,8 +473,9 @@ void Audio::AudioEngine::NewInstance(const Nan::FunctionCallbackInfo<v8::Value>&
 	if( argc > 1 )
 		argv[1] = info[1];
 
+	v8::Local<v8::Function> cons = Nan::New(constructor); // -> This is new
 	//Local<Object> instance = constructor->NewInstance( argc, argv );
-	Local<Object> instance = Nan::New(constructor)->NewInstance(argc, argv);
+	//Local<Object> instance = Nan::New(constructor)->NewInstance(argc, argv);
 	//Local<Object> instance = constructor->NewInstance(argc, argv);
 
 	info.GetReturnValue().Set( instance );
